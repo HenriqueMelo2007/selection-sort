@@ -16,9 +16,17 @@ int main(int argc, char const *argv[])
   int list[size];
 
   for (int i = 0; i < size; i++) {
-    printf("Type a number: ");
+    printf(" Type a number: ");
     scanf("%i", &list[i]);
   }
+
+  printf(" Your disordered array:\n ");
+
+  for (int i = 0; i < size; i++) {
+    printf("[ %i ]", list[i]);
+  }
+
+  printf("\n Your sorted array: ");
 
 
   return 0;
