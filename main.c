@@ -26,7 +26,27 @@ int main(int argc, char const *argv[])
     printf("[ %i ]", list[i]);
   }
 
-  printf("\n Your sorted array: ");
+  printf("\n Your sorted array:\n ");
+
+  for (int index = 0; index < size; index++) { 
+
+    int smallSize = list[index];
+
+    for (int i = index; i < size; i++ ) {
+      int possibleSmallSize = list[i];
+
+      if (possibleSmallSize < smallSize) {
+        smallSize = possibleSmallSize;
+      }
+    }
+
+    list[index] = smallSize;
+
+  }
+
+  for (int i = 0; i < size; i++) {
+    printf("[ %i ]", list[i]);
+  }
 
 
   return 0;
