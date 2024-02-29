@@ -30,18 +30,20 @@ int main(int argc, char const *argv[])
 
   for (int index = 0; index < size; index++) { 
 
-    int smallSize = list[index];
+    int lowerValue = list[index];
+    int indexLowerValue = index;
 
     for (int i = index; i < size; i++ ) {
       int possibleSmallSize = list[i];
 
-      if (possibleSmallSize < smallSize) {
-        smallSize = possibleSmallSize;
+      if (possibleSmallSize < lowerValue) {
+        lowerValue = possibleSmallSize;
+        indexLowerValue = i;
       }
     }
-
-    list[index] = smallSize;
-
+    
+    list[indexLowerValue] = list[index];
+    list[index] = lowerValue;
   }
 
   for (int i = 0; i < size; i++) {
