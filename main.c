@@ -23,13 +23,17 @@ int main(int argc, char const *argv[])
     scanf("%i", &list[i]);
   }
 
-  printf(" Your disordered array:\n ");
+  printf(" Your disordered list:\n ");
+
+  printf("[");
 
   for (int i = 0; i < size; i++) {
-    printf("[ %i ]", list[i]);
+    printf(" %i ", list[i]);
   }
 
-  printf("\n Your sorted array:\n ");
+  printf("]");
+
+  printf("\n Your sorted list:\n ");
 
   if ( order == 1 ) { ascendingOrder(size, list); } else { descendingOrder(size, list); }
 
@@ -57,9 +61,13 @@ void ascendingOrder (int size, int list[]) {
     list[index] = lowerValue;
   }
 
+  printf("[");
+
   for (int i = 0; i < size; i++) {
-    printf("[ %i ]", list[i]);
+    printf(" %i ", list[i]);
   }
+
+  printf("]");
 }
 
 void descendingOrder (int size, int list[]) {
@@ -81,7 +89,11 @@ void descendingOrder (int size, int list[]) {
     list[index] = highestValue;
   }
 
+  printf("[");
+
   for (int i = 0; i < size; i++) {
-    printf("[ %i ]", list[i]);
+    printf(" %i ", list[i]);
   }
+
+  printf("]");
 }
